@@ -9,9 +9,6 @@ class Tags(models.Model):
     def __str__(self):
         return self.name
 
-
-
-
 class Project(models.Model):
     TYPE_CHOICES = {
         'CP': 'Customer project',
@@ -28,7 +25,6 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-
 
 class Task(models.Model):
     LEVEL_CHOICES = [

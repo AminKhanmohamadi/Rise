@@ -7,5 +7,5 @@ class CustomUser(AbstractUser):
         'Personal':'personal',
         'Organization':'organization',
     }
-    type = models.CharField(max_length=10, choices=TYPE_CHOICES, default='Personal')
+    type = models.CharField(max_length=12, choices=TYPE_CHOICES, default='Personal')
     company_name = models.CharField(max_length=120 , null=True , blank=True)

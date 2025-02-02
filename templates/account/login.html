@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+    ورود | سیستم مدیریت پروژه و ارتباط با مشتری RISE
+    </title>
+    <link rel="icon" href="{% static 'dist/img/favicon.png' %}">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="login-logo border-bottom p-4">
+            <img src="{% static 'dist/img/logo.png' %}" alt="logo">
+        </div>
+        <div class="card-body login-card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="input-group mb-3">
+                    {{ form.login.errors }}
+                    <input type="email" name="login" class="form-control"  placeholder="Email address"  >
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    {{ form.password.errors }}
+                    <input type="password" name="password" class="form-control"  placeholder="Password"  aria-describedby="id_password_helptext">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">ورود</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            {#            <div class="social-auth-links text-center mb-3">#}
+            {#                <p>- OR -</p>#}
+            {#                <a href="#" class="btn btn-block btn-primary">#}
+            {#                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook#}
+            {#                </a>#}
+            {#                <a href="#" class="btn btn-block btn-danger">#}
+            {#                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+#}
+            {#                </a>#}
+            {#            </div>#}
+            <!-- /.social-auth-links -->
+
+            <p class="mb-1 mt-3 text-right">
+                <a href="#">رمز عبور را فراموش کرده اید؟</a>
+            </p>
+            <p class="mt20 text-right">حساب کاربری ندارید؟ &nbsp; <a href="#">ثبت نام</a></p>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+</body>
+</html>
